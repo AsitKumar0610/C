@@ -14,6 +14,7 @@ STACK s;
 void push (void);
 int pop(void);
 void display(void);
+void peek();
 
 void main ()
 {
@@ -22,13 +23,14 @@ void main ()
     s.top = -1 ;
     
     printf("STACK OPERATION\n");
-    while(choice != 4)
+    while(choice != 5)
     {
         printf("___________________________________________\n");
         printf("1 --> PUSH\n");
         printf("2 --> POP\n");
-        printf("3 --> DISPLAY\n");
-        printf("4 --> EXIT\n");
+        printf("3 --> PEEK\n");
+        printf("4 --> DISPLAY\n");
+        printf("5 --> EXIT\n");
         printf("___________________________________________\n");
         printf("Enter your choice!\n");
         scanf("%d",&choice);
@@ -41,9 +43,12 @@ void main ()
                 pop();
                 break;
             case 3:
-                display();
+                peek();
                 break;
             case 4:
+                display();
+                break;
+            case 5:
                 return;
         }
     }
@@ -77,6 +82,19 @@ int pop ()
         s.top = s.top - 1 ;
     }
 }
+
+void peek ()
+{
+    if (s.top == -1)
+    {
+        printf("Stack is empty!");
+    }
+    else
+    {
+        printf("peek element is %d",s.stk[s.top]);
+    }
+}
+
 void display ()
 {
     int i ;
