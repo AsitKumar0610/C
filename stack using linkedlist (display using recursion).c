@@ -57,7 +57,7 @@ int display( struct node *top)
   else
   {
     printf("%d ",top->data);
-    display(top->next);8
+    display(top->next);
 }
 
 
